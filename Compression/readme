@@ -1,1 +1,3 @@
 This project is an implementation of Huffman text compression that uses a hash table.
+Creating the uncompression code has shown there are a few problems with compression, so these will need to be looked into.
+Most of of the text still comes out correctly.
