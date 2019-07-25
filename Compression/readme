@@ -1,2 +1,3 @@
 This project is an implementation of Huffman text compression that uses a hash table.
 
+TODO: Chang the "for" loop comparisons in CodingTree to just <> comparisons.
