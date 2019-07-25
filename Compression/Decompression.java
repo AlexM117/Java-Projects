@@ -21,9 +21,8 @@ public class Decompression {
         
         try {
        	 //Accessing files and changing them to desired format of bitset and stringbuilder
-   			String text = new String(Files.readAllBytes(Paths.get(fileName)));
    			String keys = new String(Files.readAllBytes(Paths.get(keysName)));
-   			byte[] text2 = text.getBytes();
+   			byte[] text2 = Files.readAllBytes(Paths.get(fileName));
    			bitSet  = BitSet.valueOf(text2);
    			myString = new StringBuilder(keys);
    			
@@ -34,6 +33,8 @@ public class Decompression {
         
         //fill the hash table with the keys
         codes = fillTable(codes,myString);
+        
+        //System.out.println(bitSet.toString());
 
         //uncompress the text
         String text = decompress(codes,bitSet);
@@ -70,6 +71,7 @@ public class Decompression {
  
     		//checks if temporary string builder is a key to a word
     		if(codes.containsKey(temp.toString())) {
+    			//System.out.println(temp.toString());
     			//append the word and clear the temporary string builder
     			deComp.append(codes.get(temp.toString()));
     			temp = new StringBuilder();
